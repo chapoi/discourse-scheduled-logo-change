@@ -1,2 +1,54 @@
-example_setting:
-  default: true
+schedules:
+  type: objects
+  default: []
+  schema:
+    name: schedule
+    identifier: name
+    properties:
+      name:
+        type: string
+        required: true
+        validations:
+          min_length: 1
+          max_length: 100
+      start_month:
+        type: integer
+        required: true
+        default: 1
+        validations:
+          min: 1
+          max: 12
+      start_day:
+        type: integer
+        required: true
+        default: 1
+        validations:
+          min: 1
+          max: 31
+      end_month:
+        type: integer
+        required: true
+        default: 12
+        validations:
+          min: 1
+          max: 12
+      end_day:
+        type: integer
+        required: true
+        default: 31
+        validations:
+          min: 1
+          max: 31
+      logo:
+        type: upload
+        required: true
+      logo_dark:
+        type: upload
+      logo_small:
+        type: upload
+      logo_small_dark:
+        type: upload
+      mobile_logo:
+        type: upload
+      mobile_logo_dark:
+        type: upload

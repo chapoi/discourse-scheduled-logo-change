@@ -3,4 +3,43 @@ en:
     description: Automatically swap the site logo on a recurring seasonal schedule
       using uploaded images.
     settings:
-      example_setting: A description of a setting.
+      schedules:
+        description: >-
+          Define date ranges that recur every year. While the current date
+          falls within a range, the uploaded images replace the site logo.
+          Ranges are matched in order, so the first matching schedule wins.
+        schema:
+          properties:
+            name:
+              label: Name
+              description: A label to identify this schedule (e.g. "Pride" or "Halloween").
+            start_month:
+              label: Start month
+              description: Month the schedule begins (1–12).
+            start_day:
+              label: Start day
+              description: Day of the month the schedule begins (1–31).
+            end_month:
+              label: End month
+              description: Month the schedule ends (1–12).
+            end_day:
+              label: End day
+              description: Day of the month the schedule ends (1–31).
+            logo:
+              label: Logo
+              description: Main logo, shown on desktop in light mode.
+            logo_dark:
+              label: Logo (dark)
+              description: Optional dark mode variant of the main logo.
+            logo_small:
+              label: Small logo
+              description: Optional compact logo shown when the header is minimized.
+            logo_small_dark:
+              label: Small logo (dark)
+              description: Optional dark mode variant of the small logo.
+            mobile_logo:
+              label: Mobile logo
+              description: Optional logo shown on mobile devices.
+            mobile_logo_dark:
+              label: Mobile logo (dark)
+              description: Optional dark mode variant of the mobile logo.
