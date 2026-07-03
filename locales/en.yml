@@ -1,0 +1,6 @@
+en:
+  theme_metadata:
+    description: Automatically swap the site logo on a recurring seasonal schedule
+      using uploaded images.
+    settings:
+      example_setting: A description of a setting.
