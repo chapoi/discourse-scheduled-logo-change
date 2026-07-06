@@ -1,4 +1,4 @@
-# Scheduled Logo
+# Scheduled Logo Change
 
 A Discourse theme component that automatically replaces the site logo with
 uploaded images on a recurring, calendar-based schedule. Use it for seasonal
