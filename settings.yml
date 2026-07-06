@@ -12,12 +12,22 @@ schedules:
           min_length: 1
           max_length: 100
       start_month:
-        type: integer
+        type: enum
         required: true
-        default: 1
-        validations:
-          min: 1
-          max: 12
+        default: January
+        choices:
+          - January
+          - February
+          - March
+          - April
+          - May
+          - June
+          - July
+          - August
+          - September
+          - October
+          - November
+          - December
       start_day:
         type: integer
         required: true
@@ -26,12 +36,22 @@ schedules:
           min: 1
           max: 31
       end_month:
-        type: integer
+        type: enum
         required: true
-        default: 12
-        validations:
-          min: 1
-          max: 12
+        default: December
+        choices:
+          - January
+          - February
+          - March
+          - April
+          - May
+          - June
+          - July
+          - August
+          - September
+          - October
+          - November
+          - December
       end_day:
         type: integer
         required: true
@@ -41,7 +61,6 @@ schedules:
           max: 31
       logo:
         type: upload
-        required: true
       logo_dark:
         type: upload
       logo_small:

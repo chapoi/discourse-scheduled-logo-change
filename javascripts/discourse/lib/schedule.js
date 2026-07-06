@@ -1,10 +1,37 @@
+export const MONTHS = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+];
+
+export function monthNumber(name) {
+  const index = MONTHS.indexOf(name);
+  return index === -1 ? null : index + 1;
+}
+
 export function dayOrdinal(date) {
   return (date.getMonth() + 1) * 100 + date.getDate();
 }
 
 export function isActive(schedule, today) {
-  const start = schedule.start_month * 100 + schedule.start_day;
-  const end = schedule.end_month * 100 + schedule.end_day;
+  const startMonth = monthNumber(schedule.start_month);
+  const endMonth = monthNumber(schedule.end_month);
+
+  if (startMonth === null || endMonth === null) {
+    return false;
+  }
+
+  const start = startMonth * 100 + schedule.start_day;
+  const end = endMonth * 100 + schedule.end_day;
 
   if (start <= end) {
     return today >= start && today <= end;
