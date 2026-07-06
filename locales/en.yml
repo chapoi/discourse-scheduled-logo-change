@@ -1,45 +1,45 @@
 en:
   theme_metadata:
-    description: Automatically swap the site logo on a recurring seasonal schedule
+    description:
+      Automatically swap the site logo on a recurring seasonal schedule
       using uploaded images.
     settings:
       schedules:
         description: >-
-          Define date ranges that recur every year. While the current date
-          falls within a range, the uploaded images replace the site logo.
-          Ranges are matched in order, so the first matching schedule wins.
+          Each schedule needs at least one image set, otherwise it has no
+          effect and the site's default logos are used.
         schema:
           properties:
             name:
               label: Name
-              description: A label to identify this schedule (e.g. "Pride" or "Halloween").
+              description: A label to identify this schedule (e.g. "Christmas" or "Halloween").
             start_month:
               label: Start month
-              description: Month the schedule begins (1–12).
+              description: Month the schedule begins.
             start_day:
               label: Start day
               description: Day of the month the schedule begins (1–31).
             end_month:
               label: End month
-              description: Month the schedule ends (1–12).
+              description: Month the schedule ends.
             end_day:
               label: End day
               description: Day of the month the schedule ends (1–31).
             logo:
-              label: Logo
-              description: Main logo, shown on desktop in light mode.
+              label: Primary logo
+              description: The logo image at the top left of your site, used in light mode.
             logo_dark:
-              label: Logo (dark)
-              description: Optional dark mode variant of the main logo.
+              label: Primary logo (dark)
+              description: Dark mode variant of the main logo. Falls back to the main logo if not provided.
             logo_small:
               label: Small logo
-              description: Optional compact logo shown when the header is minimized.
+              description: The small logo image at the top left of your site, seen when scrolling down, used in light mode.
             logo_small_dark:
               label: Small logo (dark)
-              description: Optional dark mode variant of the small logo.
+              description: Dark mode variant of the small logo. Falls back to the small logo if not provided.
             mobile_logo:
               label: Mobile logo
-              description: Optional logo shown on mobile devices.
+              description: The logo image shown on mobile devices, used in light mode.
             mobile_logo_dark:
               label: Mobile logo (dark)
-              description: Optional dark mode variant of the mobile logo.
+              description: Dark mode variant of the mobile logo. Falls back to the mobile logo if not provided.

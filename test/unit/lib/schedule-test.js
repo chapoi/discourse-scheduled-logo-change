@@ -4,14 +4,15 @@ import {
   dayOrdinal,
   isActive,
   logoFor,
+  monthNumber,
 } from "../../../discourse/lib/schedule";
 
 function schedule(attrs = {}) {
   return {
     name: "Test",
-    start_month: 6,
+    start_month: "June",
     start_day: 1,
-    end_month: 6,
+    end_month: "June",
     end_day: 30,
     logo: "/uploads/june-light.png",
     ...attrs,
@@ -19,6 +20,16 @@ function schedule(attrs = {}) {
 }
 
 module("Scheduled Logo | Unit | schedule", function () {
+  test("monthNumber maps month names to 1-based numbers", function (assert) {
+    assert.strictEqual(monthNumber("January"), 1);
+    assert.strictEqual(monthNumber("December"), 12);
+    assert.strictEqual(monthNumber("Nonsense"), null);
+  });
+
+  test("isActive returns false when a month name is invalid", function (assert) {
+    assert.false(isActive(schedule({ start_month: "Smarch" }), 615));
+  });
+
   test("dayOrdinal encodes month and day", function (assert) {
     assert.strictEqual(dayOrdinal(new Date(2026, 0, 1)), 101);
     assert.strictEqual(dayOrdinal(new Date(2026, 11, 31)), 1231);
@@ -36,9 +47,9 @@ module("Scheduled Logo | Unit | schedule", function () {
 
   test("isActive handles ranges that wrap around the year", function (assert) {
     const winter = schedule({
-      start_month: 12,
+      start_month: "December",
       start_day: 15,
-      end_month: 1,
+      end_month: "January",
       end_day: 5,
     });
 

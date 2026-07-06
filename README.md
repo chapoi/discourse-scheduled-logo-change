@@ -28,14 +28,16 @@ entry has:
 | Name                    | ✅       | Label used to identify the schedule in the admin UI |
 | Start month / Start day | ✅       | First day the logo is shown                         |
 | End month / End day     | ✅       | Last day the logo is shown                          |
-| Logo                    | ✅       | Desktop logo, light mode                            |
+| Logo                    |          | Desktop logo, light mode                            |
 | Logo (dark)             |          | Desktop logo, dark mode                             |
 | Small logo              |          | Minimized-header logo, light mode                   |
 | Small logo (dark)       |          | Minimized-header logo, dark mode                    |
 | Mobile logo             |          | Mobile logo, light mode                             |
 | Mobile logo (dark)      |          | Mobile logo, dark mode                              |
 
-Only **Logo** is required per entry. Any optional image left blank falls back to
-the site's default logo for that variant. Dark-mode variants fall back to their
-light-mode counterpart from the same schedule when not provided, so dark mode
-still shows the seasonal logo.
+Only **Name** and the date fields are required — every image is optional. Any
+image left blank falls back to the site's default logo for that variant, so you
+can override just the images you care about (for example, swap only the mobile
+logo, or only the dark-mode logo) and leave the rest alone. Dark-mode variants
+fall back to their light-mode counterpart from the same schedule when not
+provided, so dark mode still shows the seasonal logo.
